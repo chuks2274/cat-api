@@ -1,0 +1,209 @@
+/* =========================
+   General Layout
+========================= */
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 30px 15px;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* base spacing */
+}
+
+/* =========================
+   Grid Layout
+========================= */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 20px; /* spacing between header and first card */
+}
+
+@media (max-width: 576px) {
+  .grid-container {
+    margin-top: 40px; /* more spacing on small screens */
+  }
+}
+
+/* =========================
+   Mini App Card
+========================= */
+.mini-app {
+  background-color: #ffffff !important; /* stay white on all themes */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+}
+
+.mini-app:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.mini-app h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.mini-app input,
+.mini-app select {
+  margin-bottom: 8px;
+}
+
+/* =========================
+   Output Container
+========================= */
+.output {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  min-height: 180px;
+  max-height: 230px;
+  padding: 10px;
+  margin-bottom: 10px;
+  overflow: auto;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+}
+
+.output img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.output::-webkit-scrollbar {
+  width: 6px;
+}
+
+.output::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+/* =========================
+   Buttons
+========================= */
+.mini-app button {
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  width: auto;
+  display: inline-block;
+  align-self: center;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #007bff !important; /* all blue */
+  color: white !important;
+  transition: background-color 0.2s;
+}
+
+.mini-app button:hover {
+  background-color: #0056b3 !important;
+}
+
+/* =========================
+   Themes
+========================= */
+body[data-theme="light"] {
+  background-color: #ffffff;
+  color: #333;
+}
+
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body[data-theme="blue"] {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: #fff;
+}
+
+/* Header text color based on theme */
+body[data-theme="light"] header h1 { color: #333; }
+body[data-theme="dark"] header h1 { color: #fff; }
+body[data-theme="blue"] header h1 { color: #333; }
+
+/* =========================
+   Theme Toggle Button
+========================= */
+#theme-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  min-width: 120px; /* consistent width */
+}
+
+@media (max-width: 576px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px; /* extra space below header */
+  }
+
+  #theme-toggle {
+    position: static;
+    transform: none;
+    margin-top: 15px; /* spacing between title and button */
+    font-size: 1rem;
+    padding: 8px 16px;
+    width: auto;
+  }
+}
+
+/* =========================
+   Optional Header Container (alternative)
+========================= */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;          /* space between title and button */
+  margin-bottom: 50px; /* space between header and cards */
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+}
