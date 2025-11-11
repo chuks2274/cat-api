@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Install Node.js (needed for ESLint and Vercel CLI)
+      # Step 2: Install Node.js 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
