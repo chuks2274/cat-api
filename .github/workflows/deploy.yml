@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Install Node.js 
+      # Step 2: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -33,10 +33,12 @@ jobs:
         run: |
           eslint "**/*.js" || echo "Lint warnings ignored"
 
-      # Step 5: Deploy to Vercel 
+      # Step 5: Change directory to cat-app and deploy to Vercel
       - name: Deploy to Vercel
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: vercel --prod --confirm --token=${{ secrets.VERCEL_TOKEN }}
+        run: |
+          cd cat-app
+          vercel --prod --confirm --token=${{ secrets.VERCEL_TOKEN }}
