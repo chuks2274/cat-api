@@ -33,7 +33,7 @@ jobs:
         run: |
           eslint "**/*.js" || echo "Lint warnings ignored"
 
-      # Step 5: Deploy to Vercel (only if linting passed)
+      # Step 5: Deploy to Vercel 
       - name: Deploy to Vercel
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
