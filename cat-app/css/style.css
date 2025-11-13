@@ -161,6 +161,7 @@ body[data-theme="blue"] header h1 { color: #333; }
 /* =========================
    Theme Toggle Button
 ========================= */
+/*
 #theme-toggle {
   position: absolute;
   right: 15px;
@@ -171,21 +172,22 @@ body[data-theme="blue"] header h1 { color: #333; }
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  min-width: 120px; /* consistent width */
+  min-width: 120px; 
 }
 
 /* Mobile adjustments for header and theme button */
+/*
 @media (max-width: 576px) {
   header {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px; /* extra space below header */
+    margin-bottom: 40px; 
   }
 
   #theme-toggle {
     position: static;
     transform: none;
-    margin-top: 15px; /* spacing between title and button */
+    margin-top: 15px; 
     font-size: 1rem;
     padding: 8px 16px;
     width: auto;
@@ -207,4 +209,43 @@ body[data-theme="blue"] header h1 { color: #333; }
   font-weight: 700;
   font-size: 2.5rem;
   text-align: center;
+}
+
+
+
+
+
+
+/* =========================
+   Theme Toggle Button
+========================= */
+#theme-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  min-width: 120px; /* consistent width */
+}
+
+/* =========================
+   Mobile adjustments for header and theme button
+========================= */
+@media (max-width: 576px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px; /* extra space below header */
+  }
+
+  #theme-toggle {
+    position: static;       /* remove absolute positioning */
+    transform: none;        /* remove translate */
+    margin-top: 15px;       /* spacing between title and button */
+    width: auto;            /* allow button width to shrink */
+  }
 }
