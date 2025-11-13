@@ -174,6 +174,7 @@ body[data-theme="blue"] header h1 { color: #333; }
   min-width: 120px; /* consistent width */
 }
 
+/* Mobile adjustments for header and theme button */
 @media (max-width: 576px) {
   header {
     flex-direction: column;
