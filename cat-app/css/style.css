@@ -249,3 +249,28 @@ body[data-theme="blue"] header h1 { color: #333; }
     width: auto;            /* allow button width to shrink */
   }
 }
+
+
+
+
+/* Header container for flex layout */
+.header-container {
+  display: flex;
+  flex-direction: column; /* stack title and button */
+  align-items: center;    /* center horizontally */
+  justify-content: center;
+  gap: 10px;              /* spacing between title and button */
+  margin-bottom: 40px;
+}
+
+/* Theme button */
+#theme-toggle {
+  min-width: 120px;
+}
+
+/* Optional: adjust spacing for very small screens */
+@media (max-width: 576px) {
+  #theme-toggle {
+    margin-top: 10px;
+  }
+}
