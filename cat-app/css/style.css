@@ -159,50 +159,15 @@ body[data-theme="dark"] header h1 { color: #fff; }
 body[data-theme="blue"] header h1 { color: #333; }
 
 /* =========================
-   Theme Toggle Button
-========================= */
-/*
-#theme-toggle {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 8px 16px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  min-width: 120px; 
-}
-
-/* Mobile adjustments for header and theme button */
-/*
-@media (max-width: 576px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px; 
-  }
-
-  #theme-toggle {
-    position: static;
-    transform: none;
-    margin-top: 15px; 
-    font-size: 1rem;
-    padding: 8px 16px;
-    width: auto;
-  }
-}
-
-/* =========================
-   Optional Header Container (alternative)
+   Header Container & Title
 ========================= */
 .header-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;          /* space between title and button */
-  margin-bottom: 50px; /* space between header and cards */
+  flex-direction: column; /* stack title and button */
+  align-items: center;    /* center horizontally */
+  justify-content: center;
+  gap: 10px;              /* spacing between title and button */
+  margin-bottom: 40px;
 }
 
 .title {
@@ -211,19 +176,10 @@ body[data-theme="blue"] header h1 { color: #333; }
   text-align: center;
 }
 
-
-
-
-
-
 /* =========================
    Theme Toggle Button
 ========================= */
 #theme-toggle {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
   padding: 8px 16px;
   font-size: 1rem;
   border-radius: 8px;
@@ -233,7 +189,7 @@ body[data-theme="blue"] header h1 { color: #333; }
 }
 
 /* =========================
-   Mobile adjustments for header and theme button
+   Mobile Adjustments
 ========================= */
 @media (max-width: 576px) {
   header {
@@ -245,32 +201,7 @@ body[data-theme="blue"] header h1 { color: #333; }
   #theme-toggle {
     position: static;       /* remove absolute positioning */
     transform: none;        /* remove translate */
-    margin-top: 15px;       /* spacing between title and button */
+    margin-top: 10px;       /* spacing between title and button */
     width: auto;            /* allow button width to shrink */
-  }
-}
-
-
-
-
-/* Header container for flex layout */
-.header-container {
-  display: flex;
-  flex-direction: column; /* stack title and button */
-  align-items: center;    /* center horizontally */
-  justify-content: center;
-  gap: 10px;              /* spacing between title and button */
-  margin-bottom: 40px;
-}
-
-/* Theme button */
-#theme-toggle {
-  min-width: 120px;
-}
-
-/* Optional: adjust spacing for very small screens */
-@media (max-width: 576px) {
-  #theme-toggle {
-    margin-top: 10px;
   }
 }
